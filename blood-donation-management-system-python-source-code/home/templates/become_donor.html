@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %} Blood Donation {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h4>Register As Donor</h4>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+<div class="row mt-4">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Username</i></label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">First Name</i></label>
+        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Last Name</i></label>
+        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email ID</i></label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Contact Number</i></label>
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">State</i></label>
+        <input type="text" class="form-control" name="state" id="state" placeholder="Enter State" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">City</i></label>
+        <input type="text" class="form-control" name="city" id="city" placeholder="Enter City" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Address</i></label>
+        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter Address" required></textarea>
+    </div>
+</div>
+
+<div class="row mt-2">
+<div class="form-group col-md-6">
+    <label><i style="font-weight: bold;">Gender</i></label>
+<div style="border: 1px solid lightgrey; padding: 5px; border-radius: 6px;">
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+    <label class="form-check-label">Male</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+    <label class="form-check-label">Female</label>
+  </div>
+  </div>
+  </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Blood Group</i></label>
+        <select class="form-control" name="blood_group" required>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            </select>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Profile Photo</i></label>
+        <input type="file" class="form-control" id="image" name="image" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Date Of Birth</i></label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Password</i></label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Confirm Password</i></label>
+        <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock %}

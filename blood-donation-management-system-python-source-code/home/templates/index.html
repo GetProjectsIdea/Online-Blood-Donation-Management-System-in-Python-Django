@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Blood Donation {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+<h1>Available Donors According To Blood Group</h1>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for i in all_group %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm border-danger">
+            <div class="card-body">
+              <h3 class="card-text">Blood Group: {{i.name}}</h3>
+              <h3 class="card-text">Total Donor: {{i.total}}</h3>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/donors_list/{{i.id}}/" class="btn btn-sm btn-outline-danger">View All Donors</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
